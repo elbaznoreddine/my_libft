@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:21:36 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/10/31 18:56:34 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:12:40 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (fd < 0 || !s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

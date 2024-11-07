@@ -6,37 +6,52 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:56:59 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/10/31 18:42:49 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:55:43 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	get_num(int n)
+{
+	int	count;
+
+	count = 0;
+	if (n < 0)
+		count++;
+	while (n != 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*res;
-	int		int_min;
+	int		size;
+	int		num;
 
-	int_min = -2147483648;
-	res = malloc(2 * sizeof(char));
+	num = n;
+	if (num == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (num == 0)
+		return (ft_strdup("0"));
+	size = get_num(num);
+	res = malloc(sizeof(char) * (size + 1));
 	if (!res)
-		return (0);
-	if (n == int_min)
-		return ("-2147483648");
-	else if (n < 0)
+		return (NULL);
+	res[size--] = '\0';
+	if (num < 0)
 	{
 		res[0] = '-';
-		res[1] = '\0';
-		res = ft_strjoin(res, ft_itoa(-n));
+		num = -num;
 	}
-	else if (n > 9)
+	while (num != 0)
 	{
-		res = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	}
-	else
-	{
-		res[0] = n + '0';
-		res[1] = '\0';
+		res[size--] = (num % 10) + 48;
+		num /= 10;
 	}
 	return (res);
 }

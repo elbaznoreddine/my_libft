@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:11:29 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/10/31 18:23:26 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:30:15 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*b;
-
-	b = s;
-	while (n--)
-	{
-		*b = 0;
-		b++;
-	}
+	if (n == 0)
+		return ;
+	ft_memset(s, 0, n);
 }

@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:10:51 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/04 10:09:39 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:06:38 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,16 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	*ptr;
+	size_t	bytes;
 
-	ptr = malloc((size * count));
+	if (!count || !size)
+		return (malloc(0));
+	bytes = size * count;
+	if (bytes / count != size)
+		return (NULL);
+	ptr = malloc((bytes));
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, count);
+	ft_bzero(ptr, bytes);
 	return (ptr);
 }

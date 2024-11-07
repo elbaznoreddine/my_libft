@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 16:54:42 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/03 21:06:08 by noel-baz         ###   ########.fr       */
+/*   Created: 2024/11/01 17:22:52 by noel-baz          #+#    #+#             */
+/*   Updated: 2024/11/06 16:11:20 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_lstsize(t_list *lst)
 {
-	if (!lst || !f)
-		return ;
-	f(lst->content);
+	int		count;
+	t_list	*node;
+
+	count = 0;
+	if (!lst)
+		return (0);
+	node = lst;
+	while (node)
+	{
+		count++;
+		node = node->next;
+	}
+	return (count);
 }

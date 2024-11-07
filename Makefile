@@ -1,5 +1,5 @@
 CC = cc
-FLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 FT = ft_atoi.c \
 	 ft_bzero.c \
 	 ft_calloc.c \
@@ -17,7 +17,7 @@ FT = ft_atoi.c \
 	 ft_putchar_fd.c \
 	 ft_putendl_fd.c \
 	 ft_putnbr_fd.c \
-	 ft_pustr_fd.c \
+	 ft_putstr_fd.c \
 	 ft_split.c \
 	 ft_strchr.c \
 	 ft_strdup.c \
@@ -35,37 +35,38 @@ FT = ft_atoi.c \
 	 ft_tolower.c \
 	 ft_toupper.c
 
-BFT = ft_lstnew.c \
-	  ft_lstadd_front.c \
-	  ft_lstsize.c \
-	  ft_lstlast.c \
-	  ft_lstadd_back.c \
-	  ft_lstdelone.c \
-	  ft_lstclear.c \
-	  ft_lstiter.c \
-	  ft_lstmap.c
+BFT = ft_lstnew_bonus.c \
+	  ft_lstadd_front_bonus.c \
+	  ft_lstsize_bonus.c \
+	  ft_lstlast_bonus.c \
+	  ft_lstadd_back_bonus.c \
+	  ft_lstdelone_bonus.c \
+	  ft_lstclear_bonus.c \
+	  ft_lstiter_bonus.c \
+	  ft_lstmap_bonus.c
 
-OBJ = $(FT: .c=.o)
-BOBJ = $(BFT: .c=.o)
+OBJ = $(FT:.c=.o)
+BOBJ = $(BFT:.c=.o)
 
 NAME = libft.a
 
-.PHONY : all clean oclean fclean re
-
 all: $(NAME)
-	ar rcs $(NAME) $(OBJ)
+
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
+
+bonus: $(BOBJ)
+	ar rc $(NAME) $(BOBJ)
 
 %.o: %.c libft.h
-	$(CC) $(FLAGS) -c $< -o $@ -I.
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 clean:
+	rm -f $(OBJ) $(BOBJ)
+
+fclean: clean
 	rm -f $(NAME)
-
-oclean:
-	rm -f $(OBJ)
-
-fclean: clean oclean
 
 re: fclean all
 
-	
+.PHONY : all clean fclean re

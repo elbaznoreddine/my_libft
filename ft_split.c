@@ -6,13 +6,13 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 13:29:42 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/04 10:13:02 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/07 12:47:01 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	len_words(char *str, char c)
+size_t	len_words(char const *str, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -41,7 +41,7 @@ int	check_null(char **arr, int i)
 		return (1);
 }
 
-char	*get_word(char *str, char c)
+char	*get_word(char const *str, char c)
 {
 	int		len;
 	char	*word;
@@ -49,7 +49,9 @@ char	*get_word(char *str, char c)
 	len = 0;
 	while (str[len] && str[len] != c)
 		len++;
-	word = malloc(len +1);
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
 	word[len] = '\0';
 	while (len--)
 		word[len] = str[len];
@@ -59,27 +61,27 @@ char	*get_word(char *str, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	char	*str;
 	size_t	i;
 
-	str = (char *) s;
-	i = 0;
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	split = malloc((len_words(str, c) + 1) * sizeof(char *));
-	while (*str)
+	i = 0;
+	split = malloc((len_words(s, c) + 1) * sizeof(char *));
+	if (!split)
+		return (NULL);
+	while (*s)
 	{
-		while (*str && *str == c)
-			str++;
-		if (*str && *str != c)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			split[i] = get_word(str, c);
+			split[i] = get_word(s, c);
 			if (!check_null(split, i))
 				return (NULL);
 			i++;
 		}
-		while (*str && *str != c)
-			str++;
+		while (*s && *s != c)
+			s++;
 	}
 	split[i] = NULL;
 	return (split);
