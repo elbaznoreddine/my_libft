@@ -6,15 +6,13 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:11:03 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/07 15:08:41 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:34:32 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 
