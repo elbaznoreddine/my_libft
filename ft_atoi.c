@@ -6,13 +6,13 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:11:21 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/08 12:00:58 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:31:11 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check(int sign)
+static int	check(int sign)
 {
 	if (sign > 0)
 		return (-1);

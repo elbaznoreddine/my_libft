@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:11:03 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/08 11:34:32 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:43:13 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <libc.h>
 
 typedef struct s_list
 {

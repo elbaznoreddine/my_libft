@@ -6,13 +6,13 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 13:29:42 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/07 12:47:01 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:35:39 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	len_words(char const *str, char c)
+static size_t	len_words(char const *str, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -28,7 +28,7 @@ size_t	len_words(char const *str, char c)
 	return (len);
 }
 
-int	check_null(char **arr, int i)
+static int	check_null(char **arr, int i)
 {
 	if (arr[i] == NULL)
 	{
@@ -41,7 +41,7 @@ int	check_null(char **arr, int i)
 		return (1);
 }
 
-char	*get_word(char const *str, char c)
+static char	*get_word(char const *str, char c)
 {
 	int		len;
 	char	*word;
@@ -85,4 +85,25 @@ char	**ft_split(char const *s, char c)
 	}
 	split[i] = NULL;
 	return (split);
+}
+
+void f()
+{
+	system("leaks a.out");
+}
+int main()
+{
+	atexit(f);
+	char **s;
+	int	j;
+	
+	j = 0;
+	s = ft_split("hahahah-hahahaha-\0hheheheheheheh-fhehfhhhfe", '-');
+	while(s[j])
+	{
+		printf("%s\n", s[j]);
+		free(s[j]);
+		j++;
+	}
+	free(s);
 }

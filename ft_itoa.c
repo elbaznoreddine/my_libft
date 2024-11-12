@@ -6,13 +6,13 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:56:59 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/07 10:55:43 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:29:40 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_num(int n)
+static int	get_num(int n)
 {
 	int	count;
 

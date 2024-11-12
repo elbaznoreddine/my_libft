@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:12:46 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/07 15:09:18 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:45:05 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	return (dst);
+}
+int main()
+{
+	
+	char	s1[] = "noreffe";
+	printf("%s\n", memmove(s1, s1 + 2, 0));
 }
