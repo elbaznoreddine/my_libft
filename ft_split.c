@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 13:29:42 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/12 16:35:39 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:30:36 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,25 +85,4 @@ char	**ft_split(char const *s, char c)
 	}
 	split[i] = NULL;
 	return (split);
-}
-
-void f()
-{
-	system("leaks a.out");
-}
-int main()
-{
-	atexit(f);
-	char **s;
-	int	j;
-	
-	j = 0;
-	s = ft_split("hahahah-hahahaha-\0hheheheheheheh-fhehfhhhfe", '-');
-	while(s[j])
-	{
-		printf("%s\n", s[j]);
-		free(s[j]);
-		j++;
-	}
-	free(s);
 }

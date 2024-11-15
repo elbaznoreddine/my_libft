@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:49:55 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/12 16:14:08 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/14 10:10:19 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	len_src = ft_strlen(s);
 	if (start > len_src)
 		return (ft_strdup(""));
-	if (len + start > len_src)
+	if (len > len_src - start)
 		len = len_src - start;
 	substr = malloc(len + 1);
 	if (substr == NULL)
@@ -30,9 +30,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_memcpy(substr, s + start, len);
 	substr[len] = '\0';
 	return (substr);
-}
-int main()
-{
-	char *s = ft_substr("hahaha", 0, 2);
-	printf("%s\n", s);
 }

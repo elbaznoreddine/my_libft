@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:12:56 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/12 15:48:35 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/06 14:20:43 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,4 @@ void	ft_putchar_fd(char c, int fd)
 	if (fd < 0)
 		return ;
 	write(fd, &c, 1);
-}
-int main()
-{
-	ft_putchar_fd('b', 2);
 }

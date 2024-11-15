@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:13:40 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/12 16:08:08 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:36:31 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (0);
-}
-
-int main()
-{
-	ft_strncmp(NULL, "grgr", 47);
 }

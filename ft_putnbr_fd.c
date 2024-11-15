@@ -6,7 +6,7 @@
 /*   By: noel-baz <noel-baz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:27:14 by noel-baz          #+#    #+#             */
-/*   Updated: 2024/11/12 15:53:36 by noel-baz         ###   ########.fr       */
+/*   Updated: 2024/11/09 12:09:18 by noel-baz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 		ft_putchar_fd(n + 48, fd);
-}
-
-int main()
-{
-	ft_putnbr_fd(1255, 1);
 }
